@@ -9,6 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Log token
+        run: echo "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Publish
         run: cd packages/test/ && yarn publish
         env:
